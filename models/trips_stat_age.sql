@@ -20,5 +20,4 @@ SELECT
    cc.age 
    ,avg(cc.trips) AS avg_trips 
 FROM cte_count AS cc
-GROUP BY cc.age 
-;
+GROUP BY cc.age
