@@ -1,15 +1,45 @@
-Welcome to your new dbt project!
+# dbt_scooters
 
-### Using the starter project
+## Описание проекта
 
-Try running the following commands:
-- dbt run
-- dbt test
+Проект на базе dbt, предназначенный для управления и трансформации данных,
+связанных с использованием скутеров кикшеринга.
+Позволяет выстроить аналитику данных о передвижениях и использовании скутеров.
 
+## Быстрый старт
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+1. Убедитесь, что у вас установлен пакетный менеджер uv:
+
+```bash
+uv --version
+```
+
+2. Установите зависимости проекта (dbt и адаптер postgres):
+   
+```bash
+uv sync
+```
+
+3. Клонируйте репозиторий, а затем перейдите в директорию проекта:
+
+```bash
+cd dbt_scooters
+```
+
+## Конфигурация
+
+Обновите конфигурационный файл `~/.dbt/profiles.yml` с вашими данными доступа к базе данных.
+
+## Основные команды dbt
+
+- `dbt debug` - проверка подключения к хранилищу данных (проверка профиля)
+- `dbt parse` - парсинг файлов проекта (проверка корректности)
+- `dbt compile` - компилирует dbt-модели и создает SQL-файлы
+- `dbt run` - материализация моделей в таблицы и представления
+- `dbt test` - запускает тесты для проверки качества данных
+- `dbt seed` - загружает данные в таблицы из CSV-файлов
+- `dbt build` - основная команда, комбинирует run, test и seed
+- `dbt docs generate` - генерирует документацию проекта
+- `dbt docs serve` - запускает локальный сервер для просмотра документации
+
+Примечание: если виртуальное окружение не активно, используйте `uv run dbt `.
