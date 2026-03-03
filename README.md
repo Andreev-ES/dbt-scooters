@@ -43,3 +43,9 @@ cd dbt_scooters
 - `dbt docs serve` - запускает локальный сервер для просмотра документации
 
 Примечание: если виртуальное окружение не активно, используйте `uv run dbt `.
+
+4. Активируйте PostGIS в базе PostgreSQL, если еще этого не делали:
+
+```sql
+create extension postgis schema public;
+```
