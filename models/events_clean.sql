@@ -2,6 +2,7 @@ SELECT DISTINCT
     e.user_id
     ,e."timestamp"
     ,e.type_id
+    ,{{ updated_at() }}
 FROM {{ source("scooters_raw", "events") }} AS e
 {% if is_incremental() %}
     WHERE "timestamp" > (

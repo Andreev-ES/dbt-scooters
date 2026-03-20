@@ -41,6 +41,7 @@ WITH unnest_cte AS MATERIALIZED (
 SELECT 
     "timestamp"
     ,concurrency
+    ,{{ updated_at() }}
 FROM cumsum_cte
 WHERE 1=1
 AND preserve_row = true
