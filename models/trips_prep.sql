@@ -16,5 +16,5 @@ SELECT
     ELSE 
         FALSE 
     END AS is_free 
-    ,tr.started_at::date AS "date"
+    ,{{ date_in_moscow('started_at') }} as "date"
 FROM {{ source("scooters_raw", "trips") }} AS tr
