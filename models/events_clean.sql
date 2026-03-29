@@ -16,5 +16,5 @@ FROM {{ source("scooters_raw", "events") }} AS e
         )
     {% endif %}    
 {% else %}
-    WHERE e."timestamp" < '2023-08-01'::timestamp 
+    e."timestamp" < '2023-08-01'::timestamp 
 {% endif %}
