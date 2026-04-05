@@ -20,4 +20,12 @@ models:
       +schema: "finance"
       +grants:
         select: [ "finance" ]
+    +persist_docs:
+      relation: true
+      columns: true
+seeds:
+  dbt_scooters:
+    +persist_docs:
+      relation: true
+      columns: true              
         
