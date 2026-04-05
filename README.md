@@ -65,3 +65,12 @@ create extension postgis schema public;
 - `dbt source freshness` - проверка актуальности данных в источниках
 - `dbt docs generate` - генерирует документацию проекта
 - `dbt docs serve` - запускает локальный сервер для просмотра документации
+
+...
+## Каталог данных
+
+Каталог dbt, который автоматически обновляется из ветки `main`:
+
+https://inzhenerka.github.io/dbt-scooters
+
+...
