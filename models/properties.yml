@@ -45,6 +45,10 @@ models:
     description: "Trips prepared for analysis"
     config:
       materialized: "view"
+    data_tests:
+      - row_count_equal:
+          arguments:
+            compare_model: "source('scooters_raw', 'trips')"
       
   - name: "trips_stat"
     description: "Overall trips statistics" 
@@ -128,7 +132,11 @@ models:
     description: "Trips per age grouped by sex"
     data_tests:
       - unique_key:
-          columns: [ "age" ]
+          arguments:
+            columns: [ "age" ]
+      - dbt_expectations.expect_table_column_count_to_equal:
+          arguments:
+            value: 3
     columns:
       - name: "age"
         description: "Numerical age of user"
