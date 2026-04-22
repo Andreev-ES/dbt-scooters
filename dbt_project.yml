@@ -9,7 +9,7 @@ macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 clean-targets:
   - "target"
-  - "dbt_packages"
+  - "dbt_packages"  
 on-run-end:
     - "grant usage on schema dbt_finance to finance;"  
 models:
