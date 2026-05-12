@@ -1,4 +1,7 @@
-
 target/
 dbt_packages/
 logs/
+.idea
+.vscode
+profiles.yml
+.user.yml

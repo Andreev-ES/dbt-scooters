@@ -153,4 +153,12 @@ models:
         description: "Numerical age of user"
         data_tests:
           - "dbt_utils.not_constant"
+  - name: time_spine_daily
+    config:
+      materialized: "table"
+    time_spine:
+      standard_granularity_column: date_day
+    columns:
+      - name: date_day
+        granularity: day          
  
