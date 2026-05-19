@@ -212,5 +212,26 @@ models:
     description: >
       Calculation of overall group statistics:
         - number of users in each group
-        - total number of users for information and validation                                              
+        - total number of users for information and validation
+
+  - name: "trips_age_sex_daily"
+    description: "Daily trips statistics by user age and gender"
+    data_tests:
+      - unique_key:
+          arguments:
+            columns: [ "date", "age", "sex" ]
+
+  - name: "trips_age_sex_weekly"
+    description: "Weekly trips statistics by user age and gender"
+    data_tests:
+      - unique_key:
+          arguments:
+            columns: [ "week", "age", "sex" ]
+
+  - name: "trips_age_sex_monthly"
+    description: "Monthly trips statistics by user age and gender"
+    data_tests:
+      - unique_key:
+          arguments:
+            columns: [ "month", "age", "sex" ]                                                  
  
